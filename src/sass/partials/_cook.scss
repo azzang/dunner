@@ -1,0 +1,74 @@
+#cook-container {
+  padding-bottom: 50px;
+  padding-top: 101px;
+
+  .row {
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+
+  .col-md-12 {
+    @extend %white-box;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 15px 30px;
+    position: relative;
+  }
+
+  h3 {
+    @extend %break-up-long-words;
+    margin: 0 0 15px;
+  }
+
+  .urgent {
+    background-color: $light-yellow;
+  }
+
+  h4 + h4 {
+    color: $orange;
+    margin: 0;
+  }
+
+  p {
+    @extend %break-up-long-words;
+    margin: 0 0 17px;
+  }
+
+  button {
+    bottom: 0;
+    position: absolute;
+
+    &.orange {
+      left: 0;
+      width: 50%;
+    }
+
+    & + button {
+      background-color: $light-green;
+      color: $white !important;
+      right: 0;
+      transition-duration: .3s;
+      transition-property: background-color, width;
+      width: 100%;
+
+      &.share {
+        width: 50%;
+      }
+
+      &:hover {
+        background-color: $green;
+      }
+    }
+  }
+
+  @include breakpoint(extra-small) {
+    padding-top: 76px;
+
+    .row {
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}

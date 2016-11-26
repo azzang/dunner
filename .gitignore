@@ -1,0 +1,5 @@
+node_modules
+bower_components
+src/main.js
+src/main.css
+src/js/templates.js

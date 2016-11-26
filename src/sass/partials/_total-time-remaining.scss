@@ -1,0 +1,13 @@
+.time-remainders {
+  .recipe-name {
+    @include truncate(calc(100% - 70px));
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  .pull-right {
+    overflow: hidden;
+    text-align: right;
+    width: 70px;
+  }
+}

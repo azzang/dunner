@@ -1,0 +1,60 @@
+{
+  "name": "dunner",
+  "version": "1.0.0",
+  "description": "A time-centric recipe app",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha",
+    "clean-src": "rm src/main.js src/main.css src/js/templates.js || exit 0",
+    "lint": "gulp lint-js && gulp lint-sass && gulp lint-html",
+    "heroku-build": "npm run lint && gulp build-css && gulp build-js",
+    "postheroku-build": "./cleanup.bash"
+  },
+  "pre-commit": [
+    "test",
+    "lint",
+    "clean-src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azzang/dunner"
+  },
+  "dependencies": {
+    "body-parser": "^1.8.4",
+    "cookie-parser": "^1.3.5",
+    "express": "^4.9.8",
+    "express-session": "^1.11.2",
+    "mongoose": "^4.0.4",
+    "morgan": "^1.3.2",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^1.0.0",
+    "sendgrid": "^4.7.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.16.0",
+    "browser-sync": "^2.16.0",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "eslint": "^3.11.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-htmllint": "0.0.11",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sass-lint": "^1.2.0",
+    "gulp-sourcemaps": "^2.1.1",
+    "gulp-strip-comments": "^2.4.3",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "mocha": "^3.1.2",
+    "pre-commit": "^1.1.3"
+  },
+  "license": "UNLICENSED"
+}

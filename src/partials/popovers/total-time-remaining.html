@@ -1,0 +1,5 @@
+<div ng-hide="is(recipe, 'done')" ng-repeat="recipe in recipes | orderBy: getTotalRemainingTime">
+  <span class="recipe-name">{{recipe.name}}</span>
+  <span class="pull-right" ng-hide="is(recipe, 'paused')">{{getTotalRemainingTime(recipe) | timer}}</span>
+  <span class="pull-right" ng-show="is(recipe, 'paused')">Unknown</span>
+</div>

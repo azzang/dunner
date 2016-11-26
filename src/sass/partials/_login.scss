@@ -1,0 +1,52 @@
+#login-container {
+  padding-bottom: 10%;
+  padding-top: 10%;
+
+  form {
+    padding-top: 5%;
+  }
+
+  .form-group,
+  .orange {
+    margin-right: 7px;
+  }
+
+  .form-group + .form-group {
+    vertical-align: top;
+  }
+
+  .btn-link {
+    display: block;
+    margin-top: 7px;
+    padding: 0;
+    text-align: left;
+  }
+
+  .tooltip {
+    &.right {
+      white-space: nowrap;
+    }
+  }
+
+  @include breakpoint(extra-small) {
+    form {
+      text-align: left;
+    }
+
+    .form-group,
+    .orange {
+      margin: 0 0 7px;
+      width: 100%;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint(medium) {
+    input {
+      width: 250px;
+    }
+  }
+}

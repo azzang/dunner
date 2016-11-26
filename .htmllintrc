@@ -1,0 +1,9 @@
+{
+  "id-class-style": "dash",
+  "attr-bans": ["align", "background", "bgcolor", "border", "frameborder", "longdesc", "marginwidth", "marginheight", "scrolling", "style"],
+  "tag-close": false,
+  "indent-width": 2,
+  "attr-name-style": false,
+  "id-class-ignore-regex": "{{.*?}}",
+  "attr-req-value": false
+}

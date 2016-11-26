@@ -1,0 +1,32 @@
+#hub-container {
+  padding-bottom: 22px;
+  padding-top: 51px;
+
+  h1 {
+    background-color: $light-grey;
+    color: $dark-orange;
+    font-style: italic;
+    margin: 0;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  }
+
+  p {
+    padding-top: 108px;
+  }
+
+  label {
+    @extend %break-up-long-words;
+    display: block;
+  }
+
+  .checkbox {
+    margin: 0 0 2em;
+
+    &:first-of-type {
+      padding-top: 108px;
+    }
+  }
+}

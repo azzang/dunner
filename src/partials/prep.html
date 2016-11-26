@@ -1,0 +1,35 @@
+<ng-include src="'navbar.html'"></ng-include>
+<div class="container" id="prep-container">
+  <div class="row" ng-repeat="recipe in recipes | orderBy: 'name'">
+    <div class="row">
+      <div class="col-md-9 col-md-offset-3">
+        <h2>{{recipe.name}}
+          <label ng-if="recipe.isScalable" class="h2">
+            × <input type="number" class="form-control" step="0.01" min="0.01"
+            ng-model="recipe.scaleFactor" ng-change="scaleIngredients(recipe)">
+          </label>
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <h4>INGREDIENTS</h4>
+        <ul>
+          <li ng-repeat="ingredient in recipe.ingredients">
+            {{ingredient.name}}<span ng-if="ingredient.number">{{ingredient.scaledAmount}}</span><span ng-if="ingredient.units">{{ingredient.units}}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-9">
+        <h4 ng-if="recipe.prepSteps.length">PREP STEPS</h4>
+        <ul ng-if="recipe.prepSteps.length">
+          <li ng-repeat="step in recipe.prepSteps" ng-class="{'done': step.done}" ng-click="toggleLineThrough(step)">{{step.description}}</li>
+        </ul>
+        <h4 ng-if="recipe.cookSteps.length">COOK STEPS</h4>
+        <ol ng-if="recipe.cookSteps.length">
+          <li ng-repeat="step in recipe.cookSteps">{{step.description}} ({{step.duration}} minutes)</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<ng-include src="'navbar.html'"></ng-include>
+<div class="container" id="hub-container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <h1>Recipes</h1>
+      <p ng-show="!recipes.length">You have no recipes. Click the Create/Edit link to start making some.</p>
+      <div class="checkbox" ng-repeat="recipe in recipes | orderBy: 'name'">
+        <label><input type="checkbox" ng-model="recipe.checked"
+          ng-change="updateCheckedRecipeCount(recipe)">{{recipe.name}}</label>
+      </div>
+    </div>
+  </div>
+</div>

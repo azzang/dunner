@@ -1,0 +1,21 @@
+#help-container {
+  padding-bottom: 45px;
+  padding-top: 51px;
+
+  h1,
+  h3 {
+    color: $dark-orange;
+    font-style: italic;
+    margin-top: 36px;
+  }
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  address {
+    margin: 0;
+  }
+}

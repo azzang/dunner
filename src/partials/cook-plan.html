@@ -1,0 +1,41 @@
+<div class="modal-header">
+  <button type="button" class="close" aria-label="Close" ng-click="$close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h3>Cook Plan</h3>
+</div>
+<div class="modal-body">
+  <h4>Relative Finish Times (min)</h4>
+  <ul>
+    <li ng-repeat="recipe in recipes | orderBy: 'name'">
+      <label class="h5" for="relative-finish-time-{{$index}}">{{recipe.name}}</label>
+      <input class="form-control pull-right" id="relative-finish-time-{{$index}}"
+      type="number" step="1" min="0" max="{{recipe.relativeFinishTime.max}}"
+      ng-model="recipe.relativeFinishTime.value">
+    </li>
+  </ul>
+  <h5>* Total Cook Time = {{totalCookTime}} Minutes</h5>
+  <h5>* Earliest Possible Meal Time in {{earliestPossibleMealTime}} Minutes</h5>
+  <div class="form-inline">
+    <h4>Meal Time</h4>
+    <select class="form-control" ng-model="generalMealTime">
+      <option value="asap">ASAP</option>
+      <option value="delay">Delay Until ...</option>
+    </select>
+    <datetimepicker class="input-group date" ng-model="mealTime" ng-show="mealIsDelayed()">
+      <input type="text" class="form-control">
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+    </datetimepicker>
+    <h5 ng-show="mealIsDelayed()">* Cook Start Time = {{startCookTime}}</h5>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn orange pull-left" ng-hide="mealIsDelayed()"
+  ng-click="prepareRecipesForCook()">Start Cooking ASAP!</button>
+  <button type="button" class="btn orange pull-left" ng-show="mealIsDelayed()"
+  ng-click="emailCookPlan()" ng-disabled="requestInProgress">Email Me Cook Plan</button>
+  <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}"
+  class="text-nowrap pull-left" close="closeAlert()">{{alert.msg}}</uib-alert>
+</div>

@@ -1,0 +1,22 @@
+@mixin breakpoint($screen-size) {
+  @if $screen-size == extra-small {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $screen-size == small {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if $screen-size == medium {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+}
+
+@mixin truncate($width) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: $width;
+}

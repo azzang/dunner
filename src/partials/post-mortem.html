@@ -1,0 +1,21 @@
+<ng-include src="'navbar.html'"></ng-include>
+<div class="container" id="post-mortem-container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="col-md-2">Recipe</th>
+        <th class="col-md-6">Step</th>
+        <th class="col-md-2">Estimated Duration (min)</th>
+        <th class="col-md-2">Actual Duration (min)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="step in correctedSteps | orderBy: 'recipeName'">
+        <td class="col-md-2">{{step.recipeName}}</td>
+        <td class="col-md-6">{{step.description}}</td>
+        <td class="col-md-2 text-center">{{step.estimatedDuration}}</td>
+        <td class="col-md-2 text-center">{{step.actualDuration}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

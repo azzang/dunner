@@ -1,0 +1,48 @@
+nav {
+  &.navbar-default {
+    margin-bottom: 0;
+  }
+
+  img {
+    display: block;
+    height: 100%;
+    width: auto;
+  }
+
+  .orange {
+    margin-right: 11px;
+  }
+
+  .alert {
+    display: inline-block;
+    margin: 12px 0 0;
+  }
+
+  .btn-link {
+    outline: none !important;
+    padding: 15px;
+    text-decoration: none !important;
+  }
+
+  @include breakpoint(extra-small) {
+    .orange {
+      margin: 8px 0 0;
+      width: 100%;
+
+      &:last-of-type {
+        margin-bottom: 8px;
+      }
+    }
+
+    .alert {
+      animation-name: stretch-out;
+      margin: 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    .btn-link {
+      padding: 10px;
+    }
+  }
+}

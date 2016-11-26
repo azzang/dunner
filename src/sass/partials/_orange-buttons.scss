@@ -1,0 +1,17 @@
+.orange {
+  background-color: $orange;
+  color: $white !important;
+  min-width: 80px;
+  outline: 0 !important;
+  transition: background-color .3s ease 0s;
+
+  &:hover {
+    background-color: $dark-orange;
+  }
+
+  &.ng-hide {
+    &.ng-hide-animate {
+      display: none !important;
+    }
+  }
+}

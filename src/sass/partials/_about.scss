@@ -1,0 +1,35 @@
+#about {
+  .row {
+    background-color: $light-grey;
+    margin-top: 50px;
+  }
+
+  h1 {
+    background-color: $dark-grey;
+    border-bottom: 1px solid $white;
+    border-radius: 10px 10px 0 0;
+    color: $white;
+    font-style: italic;
+    margin: 0;
+    padding: 10px 20px;
+  }
+
+  h3 {
+    background-color: $orange;
+    border-radius: 0 0 10px 10px;
+    color: $white;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+  }
+
+  @include breakpoint(extra-small) {
+    .row {
+      margin-top: 20px;
+
+      &:last-of-type {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

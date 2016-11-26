@@ -1,0 +1,7 @@
+<button class="btn orange navbar-btn" ng-click="startCooking()"
+  ng-show="is(cook, 'ready')" type="button">Start Cooking</button>
+<button class="btn orange navbar-btn" ng-show="is(cook, 'active')"
+  popover-placement="bottom" uib-popover-template="'total-time-remaining.html'"
+  popover-class="time-remainders" type="button">Total Time Remaining</button>
+<button class="btn orange navbar-btn" ng-click="prepareCorrectedStepsForPostMortem()"
+  ng-show="is(cook, 'corrected')" type="button">Post-mortem</button>

@@ -1,0 +1,17 @@
+.alert {
+  animation-duration: .3s;
+  animation-name: slide-down;
+  padding: {
+    bottom: .1em;
+    top: .1em;
+  }
+
+  & + .alert {
+    display: none;
+  }
+}
+
+[ng-view] > .alert {
+  position: fixed;
+  width: 100%;
+}

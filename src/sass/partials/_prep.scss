@@ -1,0 +1,62 @@
+#prep-container {
+  padding-bottom: 50px;
+  padding-top: 51px;
+
+  & > .row {
+    @extend %white-box;
+    margin-top: 50px;
+    padding: 29px;
+
+    .row + .row {
+      padding-top: 32px;
+    }
+  }
+
+  h2 {
+    @extend %break-up-long-words;
+    margin: 0;
+  }
+
+  label {
+    margin: 0;
+  }
+
+  input {
+    display: inline-block;
+    vertical-align: top;
+    width: 70px;
+  }
+
+  h4 {
+    margin-top: 0;
+
+    &:nth-of-type(2) {
+      margin-top: 20px;
+    }
+  }
+
+  li {
+    @extend %break-up-long-words;
+
+    span {
+      @extend %break-up-long-words;
+
+      &::before {
+        content: '|';
+        margin: 0 5px;
+      }
+    }
+  }
+
+  .done {
+    text-decoration: line-through;
+  }
+
+  @include breakpoint(small) {
+    .col-md-9 {
+      h4 {
+        margin-top: 20px;
+      }
+    }
+  }
+}

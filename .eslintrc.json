@@ -1,0 +1,21 @@
+{
+    "extends": "airbnb",
+    "installedESLint": true,
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ],
+    "globals": {
+      "angular": 1,
+      "_": 1,
+      "moment": 1,
+      "Audio": 1
+    },
+    "rules": {
+      "no-param-reassign": ["error", { "props": false }],
+      "no-underscore-dangle": ["error", { "allow": [ "_id" ] }],
+      "no-confusing-arrow": ["error", { "allowParens": true }],
+      "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+    }
+}

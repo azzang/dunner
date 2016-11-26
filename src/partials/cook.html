@@ -1,0 +1,13 @@
+<ng-include src="'navbar.html'"></ng-include>
+<div class="container" id="cook-container">
+  <div class="row" ng-repeat="recipe in recipes | orderBy: 'secondsTillNextStep'">
+    <div class="col-md-12">
+      <h3>{{recipe.name}}</h3>
+      <h4 ng-hide="is(recipe, 'done')">In <span ng-class="{'urgent': is(recipe, 'urgent') || is(recipe, 'paused')}">{{recipe.secondsTillNextStep | timer}}</span></h4>
+      <h4 ng-show="is(recipe, 'done')">Done.</h4>
+      <p ng-hide="is(recipe, 'done')">{{recipe.directions[recipe.nextStepIndex].description}}</p>
+      <button class="btn btn-xs orange" ng-click="pause(recipe)" ng-disabled="is(cook, 'ready')" ng-show="is(recipe, 'urgent')" type="button">Not Ready</button>
+      <button class="btn btn-xs" ng-class="{'share': is(recipe, 'urgent')}" ng-click="skipToNextStep(recipe)" ng-disabled="is(recipe, 'skipped') || is(recipe, 'done') || is(cook, 'ready')" ng-hide="is(recipe, 'done')" type="button">Ready Now</button>
+    </div>
+  </div>
+</div>

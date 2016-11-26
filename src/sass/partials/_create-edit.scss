@@ -1,0 +1,48 @@
+#edit-container {
+  padding-bottom: 51px;
+  padding-top: 51px;
+
+  .form-group,
+  .panel {
+    margin-bottom: 0;
+  }
+
+  form > .row {
+    margin-top: 50px;
+  }
+
+  .panel-heading {
+    background-color: $very-light-grey;
+  }
+
+  .panel-title {
+    color: $dark-grey;
+    font-size: 18px;
+  }
+
+  .panel-body > .row + .row {
+    margin-top: 15px;
+  }
+
+  .col-md-1 {
+    width: min-content;
+  }
+
+  textarea {
+    max-width: 100%;
+  }
+
+  @include breakpoint(small) {
+    .col-md-1 {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+    }
+
+    .panel-body > .row > div + div {
+      margin-top: 5px;
+    }
+  }
+}

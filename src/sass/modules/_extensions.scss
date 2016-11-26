@@ -1,0 +1,9 @@
+%break-up-long-words {
+  hyphens: auto;
+  word-break: break-all;
+}
+
+%white-box {
+  background-color: $white;
+  border: 1px solid $grey;
+}

@@ -1,0 +1,81 @@
+<ng-include src="'navbar.html'"></ng-include>
+<div class="container" id="edit-container">
+  <form name="form" novalidate>
+    <div class="row form-group" ng-class="{'has-error': isInvalid('recipeTitle')}">
+      <div class="col-md-3">
+        <label class="sr-only" for="recipe-title">Recipe Title</label>
+        <input type="text" class="form-control input-lg" id="recipe-title"
+        name="recipeTitle" maxlength="40" placeholder="Title *"
+        ng-model="recipe.name" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Ingredients</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row" ng-repeat="ingredient in recipe.ingredients">
+              <div class="form-group" ng-class="{'has-error': isInvalid('ingredientName{{$index}}')}">
+                <div class="col-md-3 col-md-offset-1">
+                  <label class="sr-only" for="ingredient-name-{{$index}}">Ingredient Name</label>
+                  <input type="text" class="form-control" id="ingredient-name-{{$index}}" name="ingredientName{{$index}}" maxlength="40" placeholder="Name *" ng-model="ingredient.name" required>
+                </div>
+              </div>
+              <div class="form-group" ng-class="{'has-error': isInvalid('ingredientNumber{{$index}}')}">
+                <div class="col-md-2">
+                  <label class="sr-only" for="ingredient-number-{{$index}}">Ingredient Number</label>
+                  <input type="number" class="form-control" id="ingredient-number-{{$index}}" name="ingredientNumber{{$index}}" step="0.01" min="0" max="1000" placeholder="Number" ng-model="ingredient.number">
+                </div>
+              </div>
+              <div class="form-group" ng-class="{'has-error': isInvalid('ingredientUnits{{$index}}')}">
+                <div class="col-md-3">
+                  <label class="sr-only" for="ingredient-units-{{$index}}">Ingredient Units</label>
+                  <input type="text" class="form-control" id="ingredient-units-{{$index}}" name="ingredientUnits{{$index}}" maxlength="20" placeholder="Units" ng-model="ingredient.units">
+                </div>
+              </div>
+              <div class="col-md-1">
+                <button class="btn btn-default" type="button" ng-click="addIngredient($index)">+</button>
+              </div>
+              <div class="col-md-1" ng-if="isLongerThanOne(recipe.ingredients)">
+                <button class="btn btn-default" type="button" ng-click="removeIngredient($index)">-</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Directions</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row" ng-repeat="direction in recipe.directions">
+              <div class="form-group" ng-class="{'has-error': isInvalid('directionDescription{{$index}}')}">
+                <div class="col-md-6 col-md-offset-1">
+                  <label class="sr-only" for="direction-description-{{$index}}">Direction Name</label>
+                  <textarea class="form-control" id="direction-description-{{$index}}" name="directionDescription{{$index}}" rows="1" maxlength="255" placeholder="Description *" ng-model="direction.description" required></textarea>
+                </div>
+              </div>
+              <div class="form-group" ng-class="{'has-error': isInvalid('directionDuration{{$index}}')}">
+                <div class="col-md-2">
+                  <label class="sr-only" for="direction-duration-{{$index}}">Direction Duration</label>
+                  <input type="number" class="form-control" id="direction-duration-{{$index}}" name="directionDuration{{$index}}" step="0.01" min="0" max="10000" placeholder="Duration (min)" ng-model="direction.duration">
+                </div>
+              </div>
+              <div class="col-md-1">
+                <button class="btn btn-default" type="button" ng-click="addDirection($index)">+</button>
+              </div>
+              <div class="col-md-1" ng-if="isLongerThanOne(recipe.directions)">
+                <button class="btn btn-default" type="button" ng-click="removeDirection($index)">-</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

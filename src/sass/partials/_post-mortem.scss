@@ -1,0 +1,13 @@
+#post-mortem-container {
+  padding-bottom: 50px;
+  padding-top: 101px;
+
+  .table {
+    background-color: $white;
+    margin-bottom: 0;
+
+    td {
+      @extend %break-up-long-words;
+    }
+  }
+}

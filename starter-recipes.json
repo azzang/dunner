@@ -1,0 +1,129 @@
+[{
+  "name": "Steak (Medium)",
+  "ingredients": [
+    {
+      "name": "Ribeye Steak (1 inch thick)",
+      "number": 12,
+      "units": "ounces"
+    },
+    {
+      "name": "Olive Oil",
+      "number": "",
+      "units": ""
+    },
+    {
+      "name": "Salt",
+      "number": "",
+      "units": ""
+    },
+    {
+      "name": "Pepper",
+      "number": "",
+      "units": ""
+    },
+    {
+      "name": "Butter",
+      "number": 2,
+      "units": "tablespoons"
+    }
+  ],
+  "directions": [
+    {
+      "description": "Do not rinse steak. Pat dry and season generously on all sides with salt and pepper.",
+      "duration": ""
+    },
+    {
+      "description": "Heat a cast iron pan to medium-high heat.",
+      "duration": ""
+    },
+    {
+      "description": "Add half a tablespoon of olive oil to hot pan and spread. Place steak flat in pan and sear.",
+      "duration": 4.5
+    },
+    {
+      "description": "When steak is nicely browned on one side, flip and sear other side.",
+      "duration": 3
+    },
+    {
+      "description": "Quickly remove steak from pan with tongs, and discard cooking fat.",
+      "duration": 0.3
+    },
+    {
+      "description": "Put steak back in pan. Add butter. Baste.",
+      "duration": 1
+    },
+    {
+      "description": "Remove steak from pan. Rest on oven rack over baking pan (to catch juices), covered in foil.",
+      "duration": 5
+    },
+    {
+      "description": "Combine drippings with half tablespoon of olive oil. Carve steak against the grain, at an angle. Drizzle with oil/drippings. Finish with salt. Serve.",
+      "duration": 2
+    }
+  ]
+},
+{
+  "name": "Peppercorn Sauce",
+  "ingredients": [
+    {
+      "name": "Butter",
+      "number": 1.5,
+      "units": "tablespoons"
+    },
+    {
+      "name": "Shallots",
+      "number": 0.25,
+      "units": "cups"
+    },
+    {
+      "name": "Cognac",
+      "number": 2,
+      "units": "tablespoons"
+    },
+    {
+      "name": "Green Peppercorns",
+      "number": 1.5,
+      "units": "tablespoons"
+    },
+    {
+      "name": "Veal Stock",
+      "number": 0.75,
+      "units": "cups"
+    },
+    {
+      "name": "Cream",
+      "number": 0.75,
+      "units": "cups"
+    }
+  ],
+  "directions": [
+    {
+      "description": "Grind peppercorns until fine.",
+      "duration": ""
+    },
+    {
+      "description": "Bring pan plus butter to medium-low heat.",
+      "duration": ""
+    },
+    {
+      "description": "Sweat shallots (season with salt) until translucent.",
+      "duration": 3
+    },
+    {
+      "description": "Add cognac. Cook at high heat until alcohol burned off.",
+      "duration": 2
+    },
+    {
+      "description": "Add steak juices (if available) and veal stock. Reduce to a syrup-like consistency, still  at high heat.",
+      "duration": 5
+    },
+    {
+      "description": "Add cream and peppercorns - reduce until thickened.",
+      "duration": 2
+    },
+    {
+      "description": "Remove from heat. Season to taste. Allow to cool slightly. Serve.",
+      "duration": 5
+    }
+  ]
+}]

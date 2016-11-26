@@ -1,0 +1,99 @@
+.modal-header {
+  h3 {
+    margin-top: 10px;
+    padding-left: 15px;
+  }
+}
+
+.modal-body {
+  padding: 30px;
+
+  h4 {
+    font-style: italic;
+  }
+
+  & > h4 {
+    margin-top: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-bottom: 15px;
+  }
+
+  label {
+    @include truncate(calc(100% - 80px));
+  }
+
+  li {
+    input {
+      width: 70px;
+    }
+  }
+
+  & > h5 {
+    margin: 0 0 15px;
+
+    &:last-child {
+      margin-bottom: 30px;
+    }
+  }
+
+  .form-inline {
+    h4 {
+      display: inline-block;
+      margin: 0;
+    }
+
+    h5 {
+      margin: 15px 0 0;
+    }
+  }
+
+  select,
+  .date {
+    margin-left: 10px;
+  }
+}
+
+.modal-footer {
+  padding: 15px 30px;
+
+  .btn {
+    margin: 0 14px 0 0;
+  }
+
+  .alert {
+    display: inline-block;
+    margin: 4px 0 0;
+  }
+}
+
+@include breakpoint(extra-small) {
+  .modal-body {
+    ul {
+      padding-left: 0;
+    }
+
+    select,
+    .date {
+      margin: 15px 0 0;
+      width: 100%;
+    }
+  }
+
+  .modal-footer {
+    .btn {
+      &.orange {
+        margin: 0 0 8px;
+        width: 100%;
+      }
+    }
+
+    .alert {
+      animation-name: stretch-out;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
