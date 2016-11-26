@@ -7,7 +7,8 @@
     "test": "mocha",
     "lint": "gulp lint-js && gulp lint-sass && gulp lint-html",
     "heroku-build": "npm run lint && gulp build-css && gulp build-js",
-    "postheroku-build": "./cleanup.bash"
+    "postheroku-build": "./cleanup.bash",
+    "postinstall": "gulp sass-to-css && gulp concatinate-html && gulp concatinate-src-js"
   },
   "pre-commit": [
     "test",

@@ -16,19 +16,6 @@ const babel = require('gulp-babel');
 const strip = require('gulp-strip-comments');
 const eslint = require('gulp-eslint');
 
-function concatinateSourceJS() {
-  return gulp.src([
-    'src/js/routes.js',
-    'src/js/templates.js',
-    'src/js/route-change-handlers.js',
-    'src/js/factories/*',
-    'src/js/directives/*',
-    'src/js/filters/*',
-    'src/js/controllers/*',
-  ]).pipe(concat('main.js'))
-  .pipe(gulp.dest('src'));
-}
-
 gulp.task('concatinate-html', () =>
   gulp.src('src/partials/**/*.html')
   .pipe(templateCache({
@@ -37,7 +24,18 @@ gulp.task('concatinate-html', () =>
   })).pipe(gulp.dest('src/js'))
 );
 
-gulp.task('concatinate-src-js', concatinateSourceJS);
+gulp.task('concatinate-src-js', () =>
+  gulp.src([
+    'src/js/routes.js',
+    'src/js/templates.js',
+    'src/js/route-change-handlers.js',
+    'src/js/factories/*',
+    'src/js/directives/*',
+    'src/js/filters/*',
+    'src/js/controllers/*',
+  ]).pipe(concat('main.js'))
+  .pipe(gulp.dest('src'))
+);
 
 gulp.task('lint-js', () =>
   gulp.src([
@@ -92,7 +90,7 @@ gulp.task('browser-sync', ['nodemon'], () =>
   browserSync.init(null, {
     proxy: 'http://localhost:3000',
     port: 5000,
-    browser: 'google chrome'
+    open: false
   })
 );
 
@@ -118,7 +116,7 @@ gulp.task('build-css', ['minify-css'], () =>
   .pipe(gulp.dest('../heroku/public/css'))
 );
 
-gulp.task('minify-css', ['sass-to-css'], () =>
+gulp.task('minify-css', () =>
   gulp.src('src/main.css')
   .pipe(cleanCSS({ keepSpecialComments: 0 }))
   .pipe(gulp.dest('../heroku/public'))
@@ -143,7 +141,7 @@ gulp.task('build-js', ['babel-minify-js'], () =>
   .pipe(gulp.dest('../heroku/public/js'))
 );
 
-gulp.task('babel-minify-js', ['default-concat-src-js'], () =>
+gulp.task('babel-minify-js', () =>
   gulp.src('src/main.js')
   .pipe(babel({
     presets: ['es2015']
@@ -151,12 +149,10 @@ gulp.task('babel-minify-js', ['default-concat-src-js'], () =>
   .pipe(gulp.dest('../heroku/public'))
 );
 
-gulp.task('default-concat-src-js', ['concatinate-html'], concatinateSourceJS);
-
-gulp.task('watch', ['default-concat-src-js'], () => {
+gulp.task('watch', () => {
   gulp.watch('src/partials/**/*.html', ['concatinate-html']);
   gulp.watch('src/sass/**/*.scss', ['sass-to-css']);
   gulp.watch('src/js/**/*.js', ['concatinate-src-js']);
 });
 
-gulp.task('default', ['sass-to-css', 'browser-sync', 'watch']);
+gulp.task('default', ['browser-sync', 'watch']);
