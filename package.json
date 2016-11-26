@@ -5,15 +5,13 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha",
-    "clean-src": "rm src/main.js src/main.css src/js/templates.js || exit 0",
     "lint": "gulp lint-js && gulp lint-sass && gulp lint-html",
     "heroku-build": "npm run lint && gulp build-css && gulp build-js",
     "postheroku-build": "./cleanup.bash"
   },
   "pre-commit": [
     "test",
-    "lint",
-    "clean-src"
+    "lint"
   ],
   "repository": {
     "type": "git",
