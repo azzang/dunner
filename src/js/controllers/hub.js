@@ -39,7 +39,7 @@ angular.module('dunner').controller('hubController', ['$scope', 'authService',
       $scope.requestInProgress = true;
       const checked = _.groupBy($scope.recipes, 'checked');
       $http.delete('/user/recipes', {
-        params: { id: _.map(checked.true, recipe => recipe._id) },
+        params: { id: _.pluck(checked.true, '_id') },
       }).success(() => {
         $scope.addAlert('success', 'Recipes Deleted.');
         $scope.recipes = checked.false || [];

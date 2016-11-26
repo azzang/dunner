@@ -14,7 +14,7 @@ angular.module('dunner').controller('postMortemController', ['$scope', 'authServ
 
     $scope.emailTable = () => {
       const recipeNames = _.chain($scope.correctedSteps)
-        .map(step => step.recipeName).uniq()
+        .pluck('recipeName').uniq()
         .sortBy(recipeName => recipeName.toLowerCase())
         .value()
         .join(' + ');
