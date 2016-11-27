@@ -23,4 +23,4 @@ $ gulp
 [Other recipe timing solutions]: http://www.americaninnovative.com/products/quadtimer.php
 [Node]: https://nodejs.org/en/
 [MongoDB]: https://docs.mongodb.com/
-[SendGrid]: https://github.com/sendgrid/sendgrid-nodejs
+[SendGrid]: https://sendgrid.com/
