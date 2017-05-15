@@ -6,10 +6,6 @@ angular.module('dunner', ['ngRoute', 'ui.bootstrap', 'ngAnimate'])
       controller: 'loginController',
       access: { restricted: false },
     })
-    .when('/about', {
-      templateUrl: 'about.html',
-      access: { restricted: false },
-    })
     .when('/hub', {
       templateUrl: 'hub.html',
       controller: 'hubController',

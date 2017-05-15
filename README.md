@@ -16,7 +16,6 @@ $ gulp
 ```
 ## To Do
 - Tests for angular code (src/js)
-- Better about page - link to demo video instead of twinkies?
 - Break Directions Panel (Create / Edit partial) into Prep and Cook Steps?
 - Prettier emails. Templates?
 
